@@ -1,0 +1,106 @@
+-- ==================================================== BASE DE DATOS ====================================================
+CREATE DATABASE IF NOT EXISTS tienda COLLATE='utf8mb4_spanish_ci';
+USE tienda;
+-- =================================================== TABLA PRODUCTOS ===================================================
+CREATE TABLE IF NOT EXISTS productos (
+  id        INT PRIMARY KEY,
+  codigo    VARCHAR(20) UNIQUE NOT NULL,
+  nombre    VARCHAR(120) NOT NULL,
+  categoria VARCHAR(50)  NOT NULL,
+  precio    INT NOT NULL,
+  cantidad  INT NOT NULL,
+  imagen    VARCHAR(255) NOT NULL
+)COLLATE='utf8mb4_spanish_ci';
+-- =================================================== PROCESADORES (16) =================================================
+INSERT INTO productos (id, codigo, nombre, categoria, precio, cantidad, imagen) VALUES
+(1,  'PROC-001', 'Intel Core i3 12100F',              'procesadores',         89990,  25, 'img/procesadores/proc01.jpg'),
+(2,  'PROC-002', 'Intel Core i5 12400F',              'procesadores',        154990,  20, 'img/procesadores/proc02.jpg'),
+(3,  'PROC-003', 'Intel Core i7 12700F',              'procesadores',        279990,  15, 'img/procesadores/proc03.jpg'),
+(4,  'PROC-004', 'Intel Core i9 12900K',              'procesadores',        439990,  10, 'img/procesadores/proc04.jpg'),
+(5,  'PROC-005', 'AMD Ryzen 3 4100',                  'procesadores',         74990,  30, 'img/procesadores/proc05.jpg'),
+(6,  'PROC-006', 'AMD Ryzen 5 5600',                  'procesadores',        129990,  28, 'img/procesadores/proc06.jpg'),
+(7,  'PROC-007', 'AMD Ryzen 5 5600X',                 'procesadores',        149990,  22, 'img/procesadores/proc07.jpg'),
+(8,  'PROC-008', 'AMD Ryzen 7 5800X',                 'procesadores',        219990,  16, 'img/procesadores/proc08.jpg'),
+(9,  'PROC-009', 'AMD Ryzen 7 5800X3D',               'procesadores',        299990,  12, 'img/procesadores/proc09.jpg'),
+(10, 'PROC-010', 'AMD Ryzen 9 5900X',                 'procesadores',        349990,  10, 'img/procesadores/proc10.jpg'),
+(11, 'PROC-011', 'Intel Core i5 13400F',              'procesadores',        189990,  18, 'img/procesadores/proc11.jpg'),
+(12, 'PROC-012', 'Intel Core i7 13700K',              'procesadores',        449990,   8, 'img/procesadores/proc12.jpg'),
+(13, 'PROC-013', 'Intel Core i9 13900K',              'procesadores',        589990,   6, 'img/procesadores/proc13.jpg'),
+(14, 'PROC-014', 'AMD Ryzen 5 7600',                  'procesadores',        199990,  14, 'img/procesadores/proc14.jpg'),
+(15, 'PROC-015', 'AMD Ryzen 7 7700X',                 'procesadores',        329990,  10, 'img/procesadores/proc15.jpg'),
+(16, 'PROC-016', 'AMD Ryzen 9 7950X',                 'procesadores',        649990,   5, 'img/procesadores/proc16.jpg'),
+-- ===================================================== MEMORIAS (16) ====================================================    
+(17, 'MEM-001', 'DDR4 8GB 2666MHz',                   'memorias',             24990,  40, 'img/memorias/mem01.jpg'),
+(18, 'MEM-002', 'DDR4 8GB 3200MHz',                   'memorias',             27990,  42, 'img/memorias/mem02.jpg'),
+(19, 'MEM-003', 'DDR4 16GB (2x8) 3200MHz',            'memorias',             52990,  35, 'img/memorias/mem03.jpg'),
+(20, 'MEM-004', 'DDR4 16GB (2x8) 3600MHz',            'memorias',             59990,  32, 'img/memorias/mem04.jpg'),
+(21, 'MEM-005', 'DDR4 32GB (2x16) 3200MHz',           'memorias',            104990,  20, 'img/memorias/mem05.jpg'),
+(22, 'MEM-006', 'DDR4 32GB (2x16) 3600MHz',           'memorias',            114990,  18, 'img/memorias/mem06.jpg'),
+(23, 'MEM-007', 'DDR5 16GB (2x8) 5200MHz',            'memorias',            109990,  22, 'img/memorias/mem07.jpg'),
+(24, 'MEM-008', 'DDR5 32GB (2x16) 5600MHz',           'memorias',            189990,  16, 'img/memorias/mem08.jpg'),
+(25, 'MEM-009', 'DDR5 32GB (2x16) 6000MHz',           'memorias',            209990,  14, 'img/memorias/mem09.jpg'),
+(26, 'MEM-010', 'DDR5 48GB (2x24) 6000MHz',           'memorias',            259990,  12, 'img/memorias/mem10.jpg'),
+(27, 'MEM-011', 'DDR5 64GB (2x32) 5600MHz',           'memorias',            329990,  10, 'img/memorias/mem11.jpg'),
+(28, 'MEM-012', 'DDR4 8GB 3000MHz RGB',               'memorias',             29990,  28, 'img/memorias/mem12.jpg'),
+(29, 'MEM-013', 'DDR4 16GB 3200MHz SODIMM',           'memorias',             45990,  26, 'img/memorias/mem13.jpg'),
+(30, 'MEM-014', 'DDR5 16GB 5600MHz SODIMM',           'memorias',             99990,  15, 'img/memorias/mem14.jpg'),
+(31, 'MEM-015', 'DDR4 32GB 3200MHz SODIMM',           'memorias',            119990,  10, 'img/memorias/mem15.jpg'),
+(32, 'MEM-016', 'Kit DDR5 64GB (2x32) 6000MHz RGB',   'memorias',            359990,   8, 'img/memorias/mem16.jpg'),
+-- ================================================ TARJETAS GRÁFICAS (16) ================================================   
+(33, 'GPU-001', 'GeForce GTX 1650 4GB',               'tarjetas gráficas',   149990,  14, 'img/gpu/gpu01.jpg'),
+(34, 'GPU-002', 'GeForce GTX 1660 Super 6GB',         'tarjetas gráficas',   199990,  12, 'img/gpu/gpu02.jpg'),
+(35, 'GPU-003', 'GeForce RTX 2060 6GB',               'tarjetas gráficas',   239990,  10, 'img/gpu/gpu03.jpg'),
+(36, 'GPU-004', 'GeForce RTX 3060 12GB',              'tarjetas gráficas',   299990,   9, 'img/gpu/gpu04.jpg'),
+(37, 'GPU-005', 'GeForce RTX 3060 Ti 8GB',            'tarjetas gráficas',   339990,   8, 'img/gpu/gpu05.jpg'),
+(38, 'GPU-006', 'GeForce RTX 3070 8GB',               'tarjetas gráficas',   399990,   7, 'img/gpu/gpu06.jpg'),
+(39, 'GPU-007', 'GeForce RTX 4070 12GB',              'tarjetas gráficas',   529990,   6, 'img/gpu/gpu07.jpg'),
+(40, 'GPU-008', 'GeForce RTX 4070 Ti 12GB',           'tarjetas gráficas',   689990,   4, 'img/gpu/gpu08.jpg'),
+(41, 'GPU-009', 'Radeon RX 6600 8GB',                 'tarjetas gráficas',   219990,  11, 'img/gpu/gpu09.jpg'),
+(42, 'GPU-010', 'Radeon RX 6650 XT 8GB',              'tarjetas gráficas',   259990,  10, 'img/gpu/gpu10.jpg'),
+(43, 'GPU-011', 'Radeon RX 6700 XT 12GB',             'tarjetas gráficas',   319990,   8, 'img/gpu/gpu11.jpg'),
+(44, 'GPU-012', 'Radeon RX 6800 16GB',                'tarjetas gráficas',   429990,   6, 'img/gpu/gpu12.jpg'),
+(45, 'GPU-013', 'Radeon RX 7600 8GB',                 'tarjetas gráficas',   279990,   9, 'img/gpu/gpu13.jpg'),
+(46, 'GPU-014', 'Radeon RX 7700 XT 12GB',             'tarjetas gráficas',   449990,   5, 'img/gpu/gpu14.jpg'),
+(47, 'GPU-015', 'Radeon RX 7800 XT 16GB',             'tarjetas gráficas',   529990,   5, 'img/gpu/gpu15.jpg'),
+(48, 'GPU-016', 'GeForce RTX 4090 24GB',              'tarjetas gráficas',  1499990,   3, 'img/gpu/gpu16.jpg'),
+-- ================================================ ALMACENAMIENTO (16) ===================================================  
+(49, 'STO-001', 'SSD SATA 240GB',                     'almacenamiento',       22990,  40, 'img/almacenamiento/sto01.jpg'),
+(50, 'STO-002', 'SSD SATA 480GB',                     'almacenamiento',       34990,  38, 'img/almacenamiento/sto02.jpg'),
+(51, 'STO-003', 'SSD SATA 960GB',                     'almacenamiento',       69990,  28, 'img/almacenamiento/sto03.jpg'),
+(52, 'STO-004', 'SSD NVMe 500GB Gen3',                'almacenamiento',       42990,  30, 'img/almacenamiento/sto04.jpg'),
+(53, 'STO-005', 'SSD NVMe 1TB Gen3',                  'almacenamiento',       74990,  24, 'img/almacenamiento/sto05.jpg'),
+(54, 'STO-006', 'SSD NVMe 1TB Gen4',                  'almacenamiento',       99990,  20, 'img/almacenamiento/sto06.jpg'),
+(55, 'STO-007', 'SSD NVMe 2TB Gen4',                  'almacenamiento',      189990,  14, 'img/almacenamiento/sto07.jpg'),
+(56, 'STO-008', 'HDD 1TB 7200rpm 3.5"',               'almacenamiento',       39990,  26, 'img/almacenamiento/sto08.jpg'),
+(57, 'STO-009', 'HDD 2TB 7200rpm 3.5"',               'almacenamiento',       54990,  22, 'img/almacenamiento/sto09.jpg'),
+(58, 'STO-010', 'HDD 4TB 5400rpm 3.5"',               'almacenamiento',       89990,  18, 'img/almacenamiento/sto10.jpg'),
+(59, 'STO-011', 'SSD Externo 500GB USB 3.2',          'almacenamiento',       69990,  16, 'img/almacenamiento/sto11.jpg'),
+(60, 'STO-012', 'SSD Externo 1TB USB 3.2',            'almacenamiento',      109990,  14, 'img/almacenamiento/sto12.jpg'),
+(61, 'STO-013', 'Tarjeta microSD 128GB A2',           'almacenamiento',       18990,  50, 'img/almacenamiento/sto13.jpg'),
+(62, 'STO-014', 'Tarjeta microSD 256GB A2',           'almacenamiento',       32990,  44, 'img/almacenamiento/sto14.jpg'),
+(63, 'STO-015', 'Enclosure NVMe USB-C 10Gbps',        'almacenamiento',       24990,  25, 'img/almacenamiento/sto15.jpg'),
+(64, 'STO-016', 'Dock SATA Dual USB 3.0',             'almacenamiento',       34990,  18, 'img/almacenamiento/sto16.jpg'),
+-- =============================================== PERIFÉRICOS (16) ======================================================= 
+(65, 'PER-001', 'Teclado mecánico TKL',               'perifericos',          39990,  20, 'img/perifericos/per01.jpg'),
+(66, 'PER-002', 'Mouse óptico 6 botones',             'perifericos',          19990,  35, 'img/perifericos/per02.jpg'),
+(67, 'PER-003', 'Set teclado + mouse inalámbrico',    'perifericos',          29990,  26, 'img/perifericos/per03.jpg'),
+(68, 'PER-004', 'Headset gamer 7.1',                  'perifericos',          34990,  22, 'img/perifericos/per04.jpg'),
+(69, 'PER-005', 'Parlantes 2.1 30W',                  'perifericos',          29990,  18, 'img/perifericos/per05.jpg'),
+(70, 'PER-006', 'Micrófono USB condensador',          'perifericos',          45990,  14, 'img/perifericos/per06.jpg'),
+(71, 'PER-007', 'Webcam 1080p',                       'perifericos',          27990,  20, 'img/perifericos/per07.jpg'),
+(72, 'PER-008', 'Monitor 24" 75Hz IPS',               'perifericos',         119990,  12, 'img/perifericos/per08.jpg'),
+(73, 'PER-009', 'Monitor 27" 144Hz',                  'perifericos',         199990,  10, 'img/perifericos/per09.jpg'),
+(74, 'PER-010', 'Silla gamer ergonómica',             'perifericos',         149990,   8, 'img/perifericos/per10.jpg'),
+(75, 'PER-011', 'Alfombrilla XXL',                    'perifericos',           9990,  40, 'img/perifericos/per11.jpg'),
+(76, 'PER-012', 'Hub USB-C 6 en 1',                   'perifericos',          24990,  24, 'img/perifericos/per12.jpg'),
+(77, 'PER-013', 'Base notebook con ventilación',      'perifericos',          21990,  22, 'img/perifericos/per13.jpg'),
+(78, 'PER-014', 'Control gamepad PC/BT',              'perifericos',          34990,  16, 'img/perifericos/per14.jpg'),
+(79, 'PER-015', 'Impresora térmica 58mm',             'perifericos',          39990,  12, 'img/perifericos/per15.jpg'),
+(80, 'PER-016', 'Luz anillo 12" con trípode',         'perifericos',          25990,  18, 'img/perifericos/per16.jpg');
+-- ================================================ SÚPER USUARIO (16) ================================================   
+CREATE USER 'admin.tienda'@'localhost' IDENTIFIED BY 'admin123';
+GRANT USAGE ON *.* TO 'admin.tienda'@'localhost';
+GRANT EXECUTE, SELECT, SHOW VIEW, ALTER, ALTER ROUTINE, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, CREATE VIEW, 
+DELETE, DROP, EVENT, INDEX, INSERT, REFERENCES, TRIGGER, UPDATE, LOCK TABLES  ON tienda.* TO 'admin.tienda'@'localhost' 
+WITH GRANT OPTION;
+FLUSH PRIVILEGES;
